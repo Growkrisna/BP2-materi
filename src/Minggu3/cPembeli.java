@@ -1,0 +1,30 @@
+package Minggu3;
+
+class cPembeli {
+    private String nama, alamat;
+    private int id;
+
+    cPembeli(){
+        System.out.println("Objek pembeli dibuat...");
+    }
+
+    cPembeli(String n, String a, int i){
+        this.nama = n;
+        this.alamat = a;
+        this.id = i;
+        System.out.println("Objek" + nama +"dibuat");
+    }
+
+    public void setAlamat(String a){this.alamat = a;}
+
+    public String getNama(){return nama;}
+
+    public int getId(){return id;}
+
+    public String getAlamat(){return alamat;}
+
+    public String toString(){
+        return "id : "+ id + "\nNama : " + nama + "\nAlamat : "+ alamat;
+    }
+
+}
