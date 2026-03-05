@@ -1,8 +1,8 @@
 package Minggu3;
 
 class cPembeli {
-    private String nama, alamat;
     private int id;
+    private String nama, alamat;
 
     cPembeli(){
         System.out.println("Objek pembeli dibuat...");
@@ -16,6 +16,8 @@ class cPembeli {
     }
 
     public void setAlamat(String a){this.alamat = a;}
+
+    public void setNama(String n){this.nama = n;}
 
     public String getNama(){return nama;}
 

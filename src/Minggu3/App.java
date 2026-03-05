@@ -6,7 +6,7 @@ public class App {
 
         Scanner scan = new Scanner(System.in);
         cBarang barang = null;
-        cPembeli pembeli;
+        cPembeli pembeli = null;
         int pilih, sub_pilih;
 
         do{
@@ -71,6 +71,43 @@ public class App {
                     System.out.println("1. Tambah\n2. Lihat\n3. Ubah\n4. Hapus");
                     System.out.print("Pilih : ");
                     sub_pilih = scan.nextInt();
+
+                    switch (sub_pilih) {
+                        case 1:
+                            System.out.print("ID : ");
+                            int kd = scan.nextInt();
+                            System.out.print("Nama : ");
+                            String nm = scan.next();
+                            System.out.print("Alamat : ");
+                            String a = scan.next();
+                            pembeli = new cPembeli(nm, a, kd);
+                            break;
+                        case 2:
+                            if(pembeli != null){
+                                System.out.println(pembeli.toString());
+                            } else {
+                                System.out.println("Tidak ada pembeli apapun");
+                            }
+                            break;
+                        case 3:
+                            System.out.print("Ubah nama : ");
+                            nm = scan.next();
+                            pembeli.setNama(nm);
+                            break;
+                        case 4:
+                            System.out.println("Yakin hapus?");
+                            System.out.print("1. Ya / 2. Tidak : ");
+                            int yakin_hapus = scan.nextInt();
+                            if (yakin_hapus == 1) {
+                                pembeli = null;
+                            }else {
+                                System.out.println("Pembeli batal dihapus");
+                            }
+                            break;
+                    
+                        default:
+                            break;
+                    }
 
                     break;
                 case 3:
