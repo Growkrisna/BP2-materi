@@ -1,17 +1,19 @@
 package Minggu3;
 import java.util.Scanner;
 
-public class App {
+public class App3 {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
+        int code = 100;
         cBarang barang = null;
         cPembeli pembeli = null;
+        cTransaksi tex = new cTransaksi();
         int pilih, sub_pilih;
 
         do{
             System.out.println("\\ Aplikasi warung \\");
-            System.out.println("1. Barang\n2. Pembeli\n3. Exit");
+            System.out.println("1. Barang\n2. Pembeli\n3. Transaksi\n4. Exit");
             System.out.print("Pilih : ");
             pilih = sc.nextInt();
             System.out.println("");
@@ -111,9 +113,31 @@ public class App {
 
                     break;
                 case 3:
+                    System.out.println("|| Menu Transaksi ||");
+                    // Ideal nya CRUD
+                    code++;
+                    System.out.print("Pembeli = ");
+                    String p = sc.next();
+                    pembeli = new cPembeli(p, "Magetan", 0);
+                    System.out.print("Barang = ");
+                    String b = sc.next();
+                    if (b.equalsIgnoreCase(barang.getNama())){
+                        System.out.print("Jumlah = ");
+                        int q = sc.nextInt();
+                    if(barang.getStok() > q){
+                        tex.tambahTransaksi(code, barang, pembeli, q);
+                        tex.cetakTransaksi();
+                    } else {
+                        System.out.println("Stok barang tidak mencukupi");
+                    }
+                    } else {
+                        System.out.println("Barang tidak ada!");
+                    }
+                    break;
+                case 4:
                     System.out.println("See you later..");
                     break;
             }
-        }while(pilih != 3);
+        }while(pilih != 4);
     }
 }

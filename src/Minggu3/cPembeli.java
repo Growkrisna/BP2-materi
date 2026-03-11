@@ -12,7 +12,7 @@ class cPembeli {
         this.nama = n;
         this.alamat = a;
         this.id = i;
-        System.out.println("Objek" + nama +"dibuat");
+        System.out.println("Objek " + nama +" dibuat");
     }
 
     public void setAlamat(String a){this.alamat = a;}

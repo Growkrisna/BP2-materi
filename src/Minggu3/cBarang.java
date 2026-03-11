@@ -1,7 +1,7 @@
 package Minggu3;
 
-public class cBarang {
-        private int kode_barang;
+    public class cBarang {
+    private int kode_barang;
     private String nama;
     private double harga;
     private int stok;
@@ -25,10 +25,10 @@ public class cBarang {
 
     public void setStrok(int s){stok = s;}
 
-    public double getHarga(){ return harga;}
-    public int getStok(){return stok;}
-    public String getNama(){return nama;}
     public int getKode(){return kode_barang;}
+    public String getNama(){return nama;}
+    public int getStok(){return stok;}
+    public double getHarga(){ return harga;}
 
     //Query
     public String ToString(){
